@@ -58,17 +58,26 @@ function mostrar(user) {
 
         buttons.innerHTML = `
         
-        <div class="col l10 offset-l1" >
+        <div class="col l4" >
             <a href="Add.html"><button class="btn blue darken-2 left" style="background: url(img/black-felt.png); margin-right: 10px; font-family: 'Sriracha', cursive; border-radius: 25px" >Ingresar al sistema</button></a>
+
+            
+        </div>
+        <div class="col l4" >
+           
 
             <button class="btn red darken-2 left" style="background: url(img/black-felt.png); font-family: 'Sriracha', cursive;  border-radius: 25px">Usuario: ${user.email}</button>
                 
-            <button class="btn blue darken-2 left" style="background: url(img/black-felt.png);margin-left: 10px; font-family: 'Sriracha', cursive; border-radius: 25px" onclick="cerrarSesion()">Cerrar</button>
-
-            
            
-
             
+            
+        </div>
+        <div class="col l4" >
+           
+                
+            <button class="btn blue darken-2 left" style="background: url(img/black-felt.png);margin-left: 10px; font-family: 'Sriracha', cursive; border-radius: 25px" onclick="cerrarSesion()">Cerrar</button>
+            
+            cpsajvaskn
         </div>
 
         
