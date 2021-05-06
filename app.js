@@ -36,7 +36,7 @@ db.collection("datos").onSnapshot((querySnapshot) => {
             <td class="center">${doc.data().title}</td>
             <td>${doc.data().type}</td>
             <td>${doc.data().description}</td>
-            <td class="center"><button class="btn red darken-2" style="border-radius: 20px; font-family: 'Sriracha', cursive; background: url(img/black-felt.png);" onclick="eliminar('${doc.id}')"><i class="material-icons">delete</i></button></td>
+            <td class="right"><button class="btn red darken-2 left" style="border-radius: 20px; font-family: 'Sriracha', cursive; background: url(img/black-felt.png);" onclick="eliminar('${doc.id}')"><i class="material-icons">delete</i></button></td>
             <td clas="right"><button class="btn yellow darken-2" style="border-radius: 20px; font-family: 'Sriracha', cursive; background: url(img/black-felt.png);" onclick="editar('${doc.id}','${doc.data().title}','${doc.data().type}','${doc.data().description}')"><i class="material-icons">edit</i></button></td>
         </tr>
         `
