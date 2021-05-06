@@ -63,7 +63,7 @@ function mostrar(user) {
 
             
         </div>
-        <br>
+        <br><br>
         <div class="col l2" >
            
 
@@ -73,7 +73,7 @@ function mostrar(user) {
             
             
         </div>
-        <br>
+        <br><br>
         <div class="col l2" >
            
                 
