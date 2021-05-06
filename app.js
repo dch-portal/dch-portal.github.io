@@ -8,19 +8,19 @@ firebase.initializeApp({
 var db = firebase.firestore();
 
 function agregar() {
-    var titulo = document.getElementById("titulo").value;
+    var producto = document.getElementById("producto").value;
     var tipo = document.getElementById("tipo").value;
-    var descripcion = document.getElementById("descripcion").value;
+    var stock = document.getElementById("stock").value;
     db.collection("datos").add({
-        title: titulo,
+        product: producto,
         type: tipo,
-        description: descripcion
+        stock: stock
     })
         .then((docRef) => {
             console.log("Document written with ID: ", docRef.id);
-            document.getElementById("titulo").value = '';
+            document.getElementById("producto").value = '';
             document.getElementById("tipo").value = '';
-            document.getElementById("descripcion").value = '';
+            document.getElementById("stock").value = '';
         })
         .catch((error) => {
             console.error("Error adding document: ", error);
@@ -33,9 +33,9 @@ db.collection("datos").onSnapshot((querySnapshot) => {
         console.log(`${doc.id} => ${doc.data()}`);
         tabla.innerHTML += `
         <tr>
-            <td class="center">${doc.data().title}</td>
+            <td class="center">${doc.data().product}</td>
             <td>${doc.data().type}</td>
-            <td>${doc.data().description}</td>
+            <td>${doc.data().stock}</td>
             <td><button class="btn red darken-2" style="border-radius: 20px; font-family: 'Sriracha', cursive; background: url(img/black-felt.png);" onclick="eliminar('${doc.id}')"><i class="material-icons">delete</i></button></td>
             <td clas="right"><button class="btn yellow darken-2" style="border-radius: 20px; font-family: 'Sriracha', cursive; background: url(img/black-felt.png);" onclick="editar('${doc.id}','${doc.data().title}','${doc.data().type}','${doc.data().description}')"><i class="material-icons">edit</i></button></td>
         </tr>
@@ -52,28 +52,28 @@ function eliminar(id) {
 
 function editar(id, titulo, tipo, descripcion) {
 
-    document.getElementById('titulo').value = titulo;
+    document.getElementById('producto').value = producto;
     document.getElementById('tipo').value = tipo;
-    document.getElementById('descripcion').value = descripcion;
+    document.getElementById('stock').value = stock;
     var boton = document.getElementById('boton');
     boton.innerHTML = 'Editar'
     boton.onclick = function () {
         var washingtonRef = db.collection("datos").doc(id);
         // Set the "capital" field of the city 'DC'
-        var titulo = document.getElementById('titulo').value;
+        var titulo = document.getElementById('producto').value;
         var tipo = document.getElementById('tipo').value;
-        var descripcion = document.getElementById('descripcion').value;
+        var descripcion = document.getElementById('stock').value;
         return washingtonRef.update({
-            title: titulo,
+            product: titulo,
             type: tipo,
-            description: descripcion
+            stock: descripcion
         })
             .then(() => {
                 console.log("Document successfully updated!");
                 boton.innerHTML = 'Agregar'
-                document.getElementById('titulo').value = '';
+                document.getElementById('producto').value = '';
                 document.getElementById('tipo').value = '';
-                document.getElementById('descripcion').value = '';
+                document.getElementById('stock').value = '';
                
                
             })
