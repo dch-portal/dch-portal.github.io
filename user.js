@@ -53,43 +53,26 @@ function cerrarSesion() {
 function mostrar(user) {
     var user = user;
     var buttons = document.getElementById("buttons");
-    var button = document.getElementById("button");
-    var usuarios = document.getElementById("usuarios");
 
     if (user.emailVerified) {
-
-        usuarios.innerHTML = `
-        <div class="col l10 offset-l1">
-
-           <button class="btn red darken-2 left" style="background: url(img/black-felt.png); font-family: 'Sriracha', cursive;  border-radius: 25px">Usuario: ${user.email}</button>
-           
-        </div>
-        
-        `;
-        
 
         buttons.innerHTML = `
         
         <div class="col l10 offset-l1" >
             <a href="Add.html"><button class="btn blue darken-2 left" style="background: url(img/black-felt.png); margin-right: 10px; font-family: 'Sriracha', cursive; border-radius: 25px" >Ingresar al sistema</button></a>
 
-            
+            <button class="btn red darken-2 left" style="background: url(img/black-felt.png); font-family: 'Sriracha', cursive;  border-radius: 25px">Usuario: ${user.email}</button>
                 
+            <button class="btn blue darken-2 left" style="background: url(img/black-felt.png);margin-left: 10px; font-family: 'Sriracha', cursive; border-radius: 25px" onclick="cerrarSesion()">Cerrar</button>
+
+            
            
 
-        </div>
-        
-
-        
-        
-        `;
-        button.innerHTML = `
-        <div class="col l10 offset-l1">
-
-           <button class="btn blue darken-2 left" style="background: url(img/black-felt.png);margin-left: 10px; font-family: 'Sriracha', cursive; border-radius: 25px" onclick="cerrarSesion()">Cerrar</button>
-
+            
         </div>
 
+        
+        
         `;
     }
 }
