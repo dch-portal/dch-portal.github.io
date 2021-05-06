@@ -37,7 +37,7 @@ db.collection("datos").onSnapshot((querySnapshot) => {
             <td>${doc.data().type}</td>
             <td>${doc.data().stock}</td>
             <td><button class="btn red darken-2" style="border-radius: 20px; font-family: 'Sriracha', cursive; background: url(img/black-felt.png);" onclick="eliminar('${doc.id}')"><i class="material-icons">delete</i></button></td>
-            <td clas="right"><button class="btn yellow darken-2" style="border-radius: 20px; font-family: 'Sriracha', cursive; background: url(img/black-felt.png);" onclick="editar('${doc.id}','${doc.data().title}','${doc.data().type}','${doc.data().description}')"><i class="material-icons">edit</i></button></td>
+            <td clas="right"><button class="btn yellow darken-2" style="border-radius: 20px; font-family: 'Sriracha', cursive; background: url(img/black-felt.png);" onclick="editar('${doc.id}','${doc.data().product}','${doc.data().type}','${doc.data().stock}')"><i class="material-icons">edit</i></button></td>
         </tr>
         `
     });
@@ -50,7 +50,7 @@ function eliminar(id) {
     });
 }
 
-function editar(id, titulo, tipo, descripcion) {
+function editar(id, producto, tipo, stock) {
 
     document.getElementById('producto').value = producto;
     document.getElementById('tipo').value = tipo;
@@ -60,13 +60,13 @@ function editar(id, titulo, tipo, descripcion) {
     boton.onclick = function () {
         var washingtonRef = db.collection("datos").doc(id);
         // Set the "capital" field of the city 'DC'
-        var titulo = document.getElementById('producto').value;
+        var producto = document.getElementById('producto').value;
         var tipo = document.getElementById('tipo').value;
-        var descripcion = document.getElementById('stock').value;
+        var stock = document.getElementById('stock').value;
         return washingtonRef.update({
-            product: titulo,
+            product: producto,
             type: tipo,
-            stock: descripcion
+            stock: stock
         })
             .then(() => {
                 console.log("Document successfully updated!");
