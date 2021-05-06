@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Document</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyC8opUCemrtjtveEfuYfu6YwIZc8SXd2lc",
+            authDomain: "usuarios-72650.firebaseapp.com",
+            projectId: "usuarios-72650",
+            storageBucket: "usuarios-72650.appspot.com",
+            messagingSenderId: "417796896533",
+            appId: "1:417796896533:web:dda358e45b591066475b1c"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+
+<body class="teal lighten-1" style="background: url(img/brick-wall.png); font-family: 'Sriracha', cursive;">
+
+    <head>
+        <div class="navbar-fixed ">
+            <nav>
+                <div class="nav-wrapper blue darken-2" style="background: url(img/black-felt.png);">
+                    <a href="index.html" style="margin-left: 5px;" class="brand-logo hide-on-med-and-down">Nube
+                        <i class="material-icons right" style="margin-top: 2px; margin-top: 2px;">cloud_queue</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#" class="dropdown-trigger" data-target="dropdown2" ><i class="material-icons">person</i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+    </head>
+
+    <main>
+        <div id="dropdown2" style="border-radius: 20px; background: url(img/brick-wall.png);"
+            class="card-panel dropdown-content white">
+            <h6 style="color: black;">Iniciar Sesion!</h6>
+            <input style="color: brown;" id="email1" type="text" placeholder="Ingrese su correo">
+            <br>
+            <input id="clave1" type="password" placeholder="Ingrese una clave">
+            <button id="btn1" class="btn blue darken-2" style="background: url(img/black-felt.png); border-radius: 25px; font-family: 'Sriracha', cursive;">Ingresar</button>
+        </div>
+        <div class="row">
+            <div class="col l10 offset-l1">
+                <br>
+                <div class="card-panel white" style="background: url(img/brick-wall.png);">
+                    <h1>Bienvenido!</h1>
+                    <h5><a href="#" class="tooltipped" data-position="right"
+                            data-tooltip="AGREGA, EDITA, ELIMINA o ACTUALIZA TUS PRODUCTOS.">INVENTARIO DE PRODUCTOS</a></h5>
+                    <a href="#" class="right tooltipped" data-position="top"
+                        data-tooltip="Accede con tu correo y contraseña.">
+                        <u>Como acceder?</u></a>
+                    <br>
+                   
+                </div>
+            </div>
+        </div>
+        <div id="buttons" class="row">
+            
+        </div>
+        
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+            var elems = document.querySelectorAll('.dropdown-trigger');
+            var instances = M.Dropdown.init(elems, {
+                hover: true,
+                closeOnClick: false,
+                constrainWidth: false,
+                coverTrigger: false
+            });
+            var elems = document.querySelectorAll('.tooltipped');
+            var instances = M.Tooltip.init(elems);
+            
+        });
+
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-auth.js"></script>
+    <script src="user.js"></script>
+
+</body>
+
+</html>
