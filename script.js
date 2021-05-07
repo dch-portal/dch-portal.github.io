@@ -4,7 +4,7 @@ function generarPDF() {
     html2pdf()
     .set({
         margin: 1,
-        filename: 'inventario.pdf'
+        filename: 'CatalogoProductos.pdf'
     })
     .from(pdf)
     .save();
