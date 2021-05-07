@@ -3,7 +3,6 @@ function generarPDF() {
 
     html2pdf()
     .set({
-        margin: 1,
         filename: 'CatalogoProductos.pdf'
     })
     .from(pdf)
