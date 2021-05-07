@@ -9,7 +9,3 @@ function generarPDF() {
     .save();
     
 }
-function imprimir() {
-    var table = document.getElementById("table");
-    window.print(table);
-}
