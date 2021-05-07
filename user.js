@@ -68,7 +68,7 @@ function mostrar(user) {
         <div class="col l10 offset-l1" >
             <a href="Add.html"><button class="btn blue darken-2 left" style="background: url(img/black-felt.png); font-family: 'Sriracha', cursive; border-radius: 25px" >Ingresar al sistema</button></a>
                 
-            <button class="btn blue darken-2 left" style="background: url(img/black-felt.png);margin-left: 4px; font-family: 'Sriracha', cursive; border-radius: 25px" onclick="cerrarSesion()">Cerrar</button>
+            <button class="btn blue darken-2 left" style="background: url(img/black-felt.png);margin-left: 6px; font-family: 'Sriracha', cursive; border-radius: 25px" onclick="cerrarSesion()">Cerrar</button>
 
             
            
