@@ -51,17 +51,22 @@
         <div id="form" class="row">
             <br>
             <div class="col l10 offset-l1 m12 s12">
-                <div class="card-panel white" style="background: url(img/black-felt.png); border-radius: 10px;">
-                    <h5>Agregar Producto</h5>
-                    <input id="producto" type="text" placeholder="producto">
-                    <input id="tipo" type="text" placeholder="tipo">
-                    <input id="stock" type="text" placeholder="stock">
-                    <button class="btn blue darken-2"
-                        style="border-radius: 20px; font-family: 'Sriracha', cursive; background: url(img/black-felt.png);"
-                        id="boton" onclick="agregar()">Agregar
-                    </button>
+                <div class="card-panel" style="border-radius: 15px; background: url(img/black-felt.png);">
+                    <div class="card-panel white" style="background: url(img/black-felt.png); border-radius: 10px;">
+                        <h5>Agregar Producto</h5>
+                        <input id="producto" type="text" placeholder="producto">
+                        <input id="tipo" type="text" placeholder="tipo">
+                        <input id="stock" type="text" placeholder="stock">
+                        <br>
+                        <button class="btn blue darken-2 right"
+                            style="border-radius: 20px; font-family: 'Sriracha', cursive; background: url(img/black-felt.png);"
+                            id="boton" onclick="agregar()">Agregar
+                        </button>
+                        <br>
 
+                    </div>
                 </div>
+               
             </div>
 
         </div> 
@@ -76,23 +81,26 @@
             
            
             <div class="col l10 offset-l1 m12 s12">
+                <div class="card-panel" style="border-radius: 15px; background: url(img/black-felt.png);">
+                    <table class="white" style="background: url(img/black-felt.png); border-radius: 10px;">
+                   
+                        <thead>
+                            <tr>
+                                <th class="center">Producto</th>
+                                <th>Tipo</th>
+                                <th>Stock</th>
+                                <th>Eliminar</th>
+                                <th>Editar</th>
+                            </tr>
 
-                <table class="white" style="background: url(img/black-felt.png); border-radius: 10px;">
-                    <thead>
-                        <tr>
-                            <th class="center">Producto</th>
-                            <th>Tipo</th>
-                            <th>Stock</th>
-                            <th>Eliminar</th>
-                            <th>Editar</th>
-                        </tr>
 
+                        </thead>
+                        <tbody id="tabla">
 
-                    </thead>
-                    <tbody id="tabla">
-
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
+                
             </div>
         </div>
     </main>
