@@ -54,7 +54,6 @@ function mostrar(user) {
     var user = user;
     var buttons = document.getElementById("buttons");
     var button = document.getElementById("button");
-    var form = document.getElementById("form");
 
     if (user.emailVerified) {
 
@@ -76,33 +75,9 @@ function mostrar(user) {
 
             
         </div>
-        `;
-        form.innerHTML = `
-        <br>
-        <div class="col l10 offset-l1 m12 s12">
-            <div class="card-panel" style="border-radius: 15px; background: url(img/black-felt.png);">
-                <div class="card-panel white" style="background: url(img/black-felt.png); border-radius: 10px;">
-                    <h5>Agregar Producto</h5>
-                    <div class="input-field">
-                        <input id="producto" type="text">
-                        <label data-success="right">nombre de producto</label>
-                    </div>
-                    <div class="input-field">
-                        <input id="tipo" type="text">
-                        <label data-success="right">tipo de producto</label>
-                    </div>
-                    <div class="input-field">
-                        <input id="stock" type="text">
-                        <label data-success="right">stock de producto</label>
-                    </div>
-                    <br>
-                    <button class="btn blue darken-2 right" style="border-radius: 20px; font-family: 'Sriracha', cursive; background: url(img/black-felt.png);" id="boton" onclick="agregar()">Agregar</button>
-                    <br>
 
-                </div>
-            </div>
-
-        </div>
+        
+        
         `;
     }
 }

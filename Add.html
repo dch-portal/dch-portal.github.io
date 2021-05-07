@@ -48,7 +48,31 @@
 
     </head>
     <div id="form" class="row">
-       
+        <br>
+        <div class="col l10 offset-l1 m12 s12">
+            <div class="card-panel" style="border-radius: 15px; background: url(img/black-felt.png);">
+                <div class="card-panel white" style="background: url(img/black-felt.png); border-radius: 10px;">
+                    <h5>Agregar Producto</h5>
+                    <div class="input-field">
+                        <input id="producto" type="text">
+                        <label data-success="right">nombre de producto</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="tipo" type="text">
+                        <label data-success="right">tipo de producto</label>
+                    </div>
+                    <div class="input-field">
+                        <input id="stock" type="text">
+                        <label data-success="right">stock de producto</label>
+                    </div>
+                    <br>
+                    <button class="btn blue darken-2 right" style="border-radius: 20px; font-family: 'Sriracha', cursive; background: url(img/black-felt.png);" id="boton" onclick="agregar()">Agregar</button>
+                    <br>
+
+                </div>
+            </div>
+
+        </div>
 
     </div>
     <main>
@@ -139,7 +163,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-auth.js"></script>
-    <script src="user.js"></script>
     <script src="app.js"></script>
     <script src="script.js"></script>
 
