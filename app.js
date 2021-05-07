@@ -42,6 +42,21 @@ db.collection("datos").onSnapshot((querySnapshot) => {
         `
     });
 });
+var info = document.getElementById("info");
+db.collection("datos").onSnapshot((querySnapshot) => {
+    info.innerHTML = '';
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+        info.innerHTML += `
+        <tr>
+            <td class="center">${doc.data().product}</td>
+            <td>${doc.data().type}</td>
+            <td>${doc.data().stock}</td>
+            
+        </tr>
+        `
+    });
+});
 function eliminar(id) {
     db.collection("datos").doc(id).delete().then(() => {
         console.log("Document successfully deleted!");

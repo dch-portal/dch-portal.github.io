@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>Sistema</title>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -39,51 +40,48 @@
                     <a href="index.html" style="margin-left: 5px;" class="brand-logo">Nube
                         <i class="material-icons right" style="margin-top: 2px; margin-top: 2px;">cloud_queue</i></a>
                     <ul class="right">
-                        <li><a href="index.html" ><i class="material-icons">home</i></a></li>
+                        <li><a href="index.html"><i class="material-icons">home</i></a></li>
                     </ul>
                 </div>
             </nav>
         </div>
 
     </head>
+    <div id="form" class="row">
+        <br>
+        <div class="col l10 offset-l1 m12 s12">
+            <div class="card-panel" style="border-radius: 15px; background: url(img/black-felt.png);">
+                <div class="card-panel white" style="background: url(img/black-felt.png); border-radius: 10px;">
+                    <h5>Agregar Producto</h5>
+                    <input id="producto" type="text" placeholder="producto">
+                    <input id="tipo" type="text" placeholder="tipo">
+                    <input id="stock" type="text" placeholder="stock">
+                    <br>
+                    <button class="btn blue darken-2 right" style="border-radius: 20px; font-family: 'Sriracha', cursive; background: url(img/black-felt.png);" id="boton" onclick="agregar()">Agregar</button>
+                    <br>
 
-    <main>
-        <div id="form" class="row">
-            <br>
-            <div class="col l10 offset-l1 m12 s12">
-                <div class="card-panel" style="border-radius: 15px; background: url(img/black-felt.png);">
-                    <div class="card-panel white" style="background: url(img/black-felt.png); border-radius: 10px;">
-                        <h5>Agregar Producto</h5>
-                        <input id="producto" type="text" placeholder="producto">
-                        <input id="tipo" type="text" placeholder="tipo">
-                        <input id="stock" type="text" placeholder="stock">
-                        <br>
-                        <button class="btn blue darken-2 right"
-                            style="border-radius: 20px; font-family: 'Sriracha', cursive; background: url(img/black-felt.png);"
-                            id="boton" onclick="agregar()">Agregar
-                        </button>
-                        <br>
-
-                    </div>
                 </div>
-               
             </div>
 
-        </div> 
-        
+        </div>
+
+    </div>
+    <main>
+
+
         <div class="row">
-            <div class="col l2 offset-l5 m12 s12">
-                <h4 class="center" style="background: url(img/black-felt.png); border-radius: 200px;"></h4>
+            <div class="col l6 offset-l3 m12 s12">
+                <h4 class="center">GESTIONAR PRODUCTOS</h4>
             </div>
         </div>
-        
-        <div class="row">
-            
-           
+
+        <div  class="row">
+
+
             <div class="col l10 offset-l1 m12 s12">
                 <div class="card-panel" style="border-radius: 15px; background: url(img/black-felt.png);">
                     <table class="white" style="background: url(img/black-felt.png); border-radius: 10px;">
-                   
+
                         <thead>
                             <tr>
                                 <th class="center">Producto</th>
@@ -100,24 +98,64 @@
                         </tbody>
                     </table>
                 </div>
-                
+
             </div>
         </div>
+       
     </main>
+    <main id="pdf">
+        <div class="row">
+            <div class="col l6 offset-l3 m12 s12">
+                <h4 class="center">PRODUCTOS</h4>
+            </div>
+        </div>
+        <div class="row">
 
+
+            <div class="col l10 offset-l1 m12 s12">
+                <div class="card-panel" style="border-radius: 15px; background: url(img/black-felt.png);">
+                    <table class="white" style="background: url(img/black-felt.png); border-radius: 10px;">
+
+                        <thead>
+                            <tr>
+                                <th class="center">Producto</th>
+                                <th>Tipo</th>
+                                <th>Stock</th>
+                            </tr>
+
+
+                        </thead>
+                        <tbody id="info">
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+         
+    </main>
+    <div class="row">
+        <div class="col l2 offset-l9">
+           <button onclick="generarPDF()" class="btn red darken-2 right" style="border-radius: 15px; background: url(img/black-felt.png); font-family: 'Sriracha', cursive;">GENERAR PDF</i></button>
+        </div>
+
+    </div> 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.sidenav');
             var instances = M.Sidenav.init(elems);
-            
+
         });
 
     </script>
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.0/firebase-auth.js"></script>
     <script src="app.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
